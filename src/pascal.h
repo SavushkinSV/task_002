@@ -12,5 +12,4 @@ void freeMatrix(int **matrix);
 int getNextElementPascal(int **matrix);
 void inputMatrixResult(int **matrixPascal, int row, int col, int **matrixResult);
 
-
 #endif  // PASCAL_H
