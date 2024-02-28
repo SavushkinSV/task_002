@@ -8,7 +8,7 @@ int main() {
     int **matrixResult = NULL;
     int **matrixPascal = NULL;
 
-    if (scanf("%d", &n) == 1 && (n > 0 && n <= MAX_SIZE)) {
+    if (scanf("%d", &n) == 1 && (n > 0 && n <= MAX_SIZE_RESULT)) {
         matrixPascal = getMatrix(MAX_SIZE, MAX_SIZE);
         matrixResult = getMatrix(n, n);
         inputMatrixPascal(matrixPascal, MAX_SIZE);
