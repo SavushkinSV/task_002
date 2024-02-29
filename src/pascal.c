@@ -29,8 +29,11 @@ void printBasePascal (int row) {
       } else {
         *currentPointArray = *(currentPointArray - currentRow) + *(currentPointArray - currentRow - 1);
       }
-      if (row == (currentRow + 1))
-       printf("%d ", *currentPointArray);
+      if (row == (currentRow + 1)) {
+        if(j != currentRow) printf("%d ", *currentPointArray);
+        else printf("%d", *currentPointArray);
+      }
+       
       currentPointArray++;
       count++;      
       j++;
