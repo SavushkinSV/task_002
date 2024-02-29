@@ -5,13 +5,15 @@
 
 int main() {
     int n = 0;
-    int **matrix = NULL;
+    // int **matrix = NULL;
 
     if (scanf("%d", &n) == 1 && (n > 0 && n <= MAX_SIZE)) {
-        matrix = getMatrix(n, n);
-        inputMatrixPascal(matrix, n);
-        outputRowMatrix(matrix, n);
-        freeMatrix(matrix);
+        // matrix = getMatrix(n, n);
+        // inputMatrixPascal(matrix, n);
+        // outputRowMatrix(matrix, n);
+        printBasePascal(n);
+
+        // freeMatrix(matrix);
     } else {
         fprintf(stderr, "Puck you, Verter!");
         exit(-1);
