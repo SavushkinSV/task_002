@@ -5,42 +5,41 @@
 
 /* Функция возвращает размер массива по основанию треугольника Паскаля */
 int getSizeArray(int row) {
-  if (row == 1) return 1;
-  return row + getSizeArray(row - 1);
+    if (row == 1) return 1;
+    return row + getSizeArray(row - 1);
 }
 
 /* Функция выводит основание треугольника Паскаля */
-void printBasePascal (int row) {
-  int *currentPointArray; // текущее положение указателя
-  int sizeArray = getSizeArray(row);  
-  int count = 0; //сколько символов заполнено
-  int *pascalArray = malloc(sizeArray * sizeof(int)); //выделение памяти под массив треугольника паскаля
-  currentPointArray = pascalArray;
-  int currentRow = 0;
-  int j = 0;
-  while (count < sizeArray)
-  {
-    j = 0;
-    while (j <= currentRow)
-    {      
-      if (j == 0 || currentRow == j)
-      { 
-        *currentPointArray = 1;
-      } else {
-        *currentPointArray = *(currentPointArray - currentRow) + *(currentPointArray - currentRow - 1);
-      }
-      if (row == (currentRow + 1)) {
-        if(j != currentRow) printf("%d ", *currentPointArray);
-        else printf("%d", *currentPointArray);
-      }
-       
-      currentPointArray++;
-      count++;      
-      j++;
+void printBasePascal(int row) {
+    int *currentPointArray;  // текущее положение указателя
+    int sizeArray = getSizeArray(row);
+    int count = 0;  // сколько символов заполнено
+    int *pascalArray = malloc(sizeArray * sizeof(int));  // выделение памяти под массив треугольника паскаля
+    currentPointArray = pascalArray;
+    int currentRow = 0;
+    int j = 0;
+    while (count < sizeArray) {
+        j = 0;
+        while (j <= currentRow) {
+            if (j == 0 || currentRow == j) {
+                *currentPointArray = 1;
+            } else {
+                *currentPointArray =
+                    *(currentPointArray - currentRow) + *(currentPointArray - currentRow - 1);
+            }
+            if (row == (currentRow + 1)) {
+                if (j != currentRow)
+                    printf("%d ", *currentPointArray);
+                else
+                    printf("%d", *currentPointArray);
+            }
+            currentPointArray++;
+            count++;
+            j++;
+        }
+        currentRow++;
     }
-    currentRow++;
-  }
-  free(pascalArray);
+    free(pascalArray);
 }
 
 /* Функция возвращает указатель на матрицу заданного размера */

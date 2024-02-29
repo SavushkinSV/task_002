@@ -13,6 +13,6 @@ int getNextElementPascal(int **matrix);
 void inputMatrixResult(int **matrixPascal, int row, int col, int **matrixResult);
 
 int getSizeArray(int row);
-void printBasePascal (int row);
+void printBasePascal(int row);
 
 #endif  // PASCAL_H
